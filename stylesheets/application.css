@@ -1,0 +1,160 @@
+#locationButton {
+    left: 10px;
+    right: auto !important;
+}
+
+.button img {
+    padding-top: 5px;
+}
+
+#locationButton img, #locationRefresh img {
+    padding-top: 2px;
+}
+
+#jqt ul li {
+    background-color: #fff;
+}
+
+#map img {
+    width: 100%;
+    height: auto;
+}
+
+#map #loading {
+    width: 16px;
+    height: 16px;
+}
+
+img.loading {
+    padding-right: 10px;
+}
+
+#followed_locations .button {
+    right: 0;
+    top: 0;
+}
+
+#followed_locations h2 {
+    margin: 0 20px 0 0;
+    float: left;
+}
+
+#followed_locations {
+    width: 400px;
+    position: relative;
+}
+
+#followed-locations-toolbar input {
+    right: 0 !important;
+}
+
+#followed-locations-list {
+    opacity: 0;
+    display: none;
+}
+
+#followButton {
+    right: 0;
+    position: relative;
+    bottom: auto !important;
+}
+
+#accuracy-indicator {
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    float: right;
+}
+
+#accuracy-indicator span {
+    background-color: #ccc;
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+#counter {
+    float: right;
+}
+
+#error {
+    display: none;
+}
+
+ul#messages li, #send-guff ul li  {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+ul#messages li p {
+    width: 70%;
+    float: left;
+}
+
+ul#messages li span {
+    width: 20%;
+    float: right;
+    color: #ccc;
+}
+
+#jqt ul li textarea {
+    padding: 5px;
+}
+
+#jqt ul li input[type="text"], #jqt ul li input[type="password"], #jqt ul li input[type="tel"], #jqt ul li input[type="number"], #jqt ul li input[type="search"], #jqt ul li input[type="email"], #jqt ul li input[type="url"], #jqt ul li textarea, #jqt ul li select {
+    font-size: 16px;
+}
+
+#jqt .toolbar {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: rgba(32, 121, 163, 0) 0 1px 6px;
+    box-shadow: rgba(28, 94, 127, 0.8) 0 1px 6px;
+    border-bottom: 1px solid #2479A3;
+    z-index: 10;
+    position: relative;
+    padding: 10px;
+    height: 44px;
+}
+
+#jqt .toolbar {
+    background-color: #2A8AC5;
+}
+
+#jqt .button, #jqt .back, #jqt .cancel, #jqt .add {
+    border: 1px solid #2479A3;
+    background-color: #1C5E7F;
+}
+
+#jqt .back::after, #jqt .back::before {
+    background-color: #1C5E7F;
+}
+
+#jqt .back.active:after {
+  background-color: #164A5E;
+}
+
+#jqt .button.active, #jqt .back.active, #jqt .cancel.active, #jqt .add.active {
+  background-color: #164A5E;
+}
+
+#jqt .toolbar > h1 {
+    color: white;
+    text-shadow: #1C5E7F 0 1px 0;
+}
+
+#jqt #home .toolbar > h1 {
+    bottom: 4px;
+}
+
+#infoButton svg {
+    margin-top: 4px;
+}
+
+#locationButton svg, #locationRefresh svg {
+    margin-top: 2px;
+}
+span.label { 
+    padding-left: 10px;
+    float:right; 
+}

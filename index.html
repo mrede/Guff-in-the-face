@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	  <meta charset="utf-8">
+	
+	  <link rel="stylesheet" href="stylesheets/vendor/jqtouch/vanilla.css">
+	  <link rel="stylesheet" href="stylesheets/application.css">
+    
+	<!-- iPad/iPhone specific css below, add after your main css >
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+	-->
+	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+	<script type="text/javascript" charset="utf-8" src="javascripts/cordova-2.0.0.js"></script>
+	
+	<!-- vendor libraries -->
+    <script src="javascripts/vendor/jqtouch/zepto.jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/vendor/jqtouch/jqtouch.min.js" type="text/javascript" charset="utf-8"></script> 
+    
+    <!-- application -->
+    <script src="javascripts/application.js"></script>
+    
+    <script type='text/javascript'>
+        function onBodyLoad()
+        {		
+        	document.addEventListener("deviceready", onDeviceReady, false);
+        }
+        
+        function onDeviceReady()
+        {
+          console.log("We Have Started")
+        	//navigator.notification.alert("PhoneGap is working");
+        	checkConnection();
+        }
+        
+        /* Check to see if they have net connection */
+        function checkConnection() {
+            var networkState = navigator.network.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.NONE]     = 'No network connection';
+            
+            ///Remember to put the init call here once we are happy all is good
+            // $(function(){
+            //     var guff = new Guff();
+            //     guff.init();
+            // });
+            // 
+            // var jQT = new $.jQTouch({
+            //     icon: 'jqtouch.png',
+            //     addGlossToIcon: false,
+            //     startupScreen: '/images/apple-touch-icon.png',
+            //     statusBar: 'black',
+            //     fixedViewport: true,
+            //     formSelector: '.form'
+            // });
+        }
+
+    </script>  
+  </head>
+  <body onload="onBodyLoad()">
+  <div id="jqt">
+      <div id="home">
+          <div class="toolbar">
+              <h1><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="27px" viewBox="0 0 30 27" enable-background="0 0 30 27" xml:space="preserve"><path fill="#FFFFFF" d="M0,18.168c0-0.258,0.035-0.492,0.105-0.703s0.082-0.48,0.035-0.809c0.726-1.547,1.552-2.982,2.479-4.307
+    c0.926-1.324,2.033-2.49,3.322-3.498c0.211-0.164,0.381-0.334,0.51-0.51c0.128-0.176,0.258-0.346,0.387-0.51
+    c0.128-0.164,0.275-0.311,0.439-0.439C7.441,7.264,7.652,7.176,7.91,7.129c0.585-0.68,1.289-1.301,2.109-1.863
+    c0.82-0.562,1.675-1.102,2.566-1.617c0.891-0.516,1.787-1.043,2.689-1.582s1.717-1.125,2.443-1.758
+    c0.258,0.164,0.463,0.217,0.615,0.158s0.311-0.064,0.475-0.018c0.211,0.445,0.486,0.756,0.826,0.932s0.691,0.352,1.055,0.527
+    s0.703,0.387,1.02,0.633s0.557,0.58,0.721,1.002c-0.164,0-0.24,0.059-0.229,0.176s0.041,0.246,0.088,0.387s0.07,0.27,0.07,0.387
+    s-0.105,0.176-0.316,0.176c0,0.164,0.082,0.246,0.246,0.246s0.246,0.082,0.246,0.246c0,0.141-0.029,0.252-0.088,0.334
+    s-0.064,0.217-0.018,0.404c-0.562,0.375-1.189,0.732-1.881,1.072s-1.418,0.697-2.18,1.072s-1.535,0.779-2.32,1.213
+    c-0.786,0.434-1.564,0.932-2.338,1.494s-1.553,1.184-2.338,1.863c-0.786,0.68-1.542,1.4-2.268,2.162
+    c-0.727,0.762-1.406,1.547-2.039,2.355s-1.172,1.6-1.617,2.373c0.047,0.117,0.111,0.223,0.193,0.316
+    c0.082,0.094,0.146,0.199,0.193,0.316c0.891,0.047,1.723,0.041,2.496-0.018s1.547-0.006,2.32,0.158
+    c0.093-0.07,0.152-0.164,0.176-0.281c0.023-0.117,0.093-0.199,0.211-0.246c1.594-0.164,3.082-0.428,4.465-0.791
+    c1.383-0.363,2.789-0.732,4.219-1.107c-0.422-0.164-0.797-0.293-1.125-0.387c-0.141-0.141-0.135-0.264,0.018-0.369
+    s0.275-0.217,0.369-0.334c-0.375-0.211-0.686-0.492-0.932-0.844s-0.393-0.809-0.439-1.371c0.164-0.141,0.246-0.305,0.246-0.492
+    s-0.082-0.34-0.246-0.457c-0.117-0.047-0.188-0.047-0.211,0s-0.041,0.094-0.053,0.141s-0.035,0.094-0.07,0.141s-0.1,0.047-0.193,0
+    c0.023-0.258,0.082-0.469,0.176-0.633s0.164-0.363,0.211-0.598l2.918-1.934c0.305,0.234,0.68,0.48,1.125,0.738
+    s0.914,0.516,1.406,0.773s0.996,0.521,1.512,0.791s0.996,0.533,1.441,0.791c0.422,0.188,0.785,0.416,1.09,0.686
+    s0.598,0.551,0.879,0.844s0.562,0.58,0.844,0.861s0.621,0.516,1.02,0.703c-0.047,0.375-0.023,0.68,0.07,0.914
+    s0.117,0.516,0.07,0.844c-0.445,0.797-0.984,1.471-1.617,2.021s-1.342,1.025-2.127,1.424s-1.623,0.732-2.514,1.002
+    s-1.805,0.527-2.742,0.773s-1.881,0.504-2.83,0.773s-1.881,0.58-2.795,0.932c-0.399,0-0.738,0.012-1.02,0.035
+    s-0.551,0.059-0.809,0.105c-0.258,0.047-0.516,0.094-0.773,0.141c-0.258,0.047-0.54,0.082-0.844,0.105
+    c-0.118-0.023-0.193,0-0.229,0.07s-0.088,0.129-0.158,0.176c-0.469,0.07-0.891,0.105-1.266,0.105c-0.375,0-0.691,0-0.949,0
+    c-0.329,0-0.668,0.047-1.02,0.141s-0.68,0.129-0.984,0.105c-2.109-0.094-3.762-0.844-4.957-2.25s-1.852-3.34-1.969-5.801
+    c0.023-0.117,0-0.193-0.07-0.229S0.047,18.215,0,18.168z"/></svg></h1>
+              <a class="button slideup" id="infoButton" href="#post_message">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 30 30" enable-background="0 0 30 27" xml:space="preserve"><path fill="#FFFFFF" d="M25.31,2.872l-3.384-2.127c-0.854-0.536-1.979-0.278-2.517,0.576l-1.334,2.123l6.474,4.066l1.335-2.122C26.42,4.533,26.164,3.407,25.31,2.872zM6.555,21.786l6.474,4.066L23.581,9.054l-6.477-4.067L6.555,21.786zM5.566,26.952l-0.143,3.819l3.379-1.787l3.14-1.658l-6.246-3.925L5.566,26.952z"/></svg>
+                <!-- <img src="images/08-chat.png" /> -->
+              </a>
+              <a class="button slideup" id="locationButton" href="#location">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 30 30" enable-background="0 0 30 27" xml:space="preserve"><path fill="#FFFFFF" d="M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z"/></svg>
+                <!-- <img src="images/07-map-marker.png" /> -->
+              </a>
+              
+          </div>
+          <div class="info scroll" id="error"></div>
+          
+          <ul id="messages">
+              <li><img id="map" src="images/loading.gif" class="loading" />Getting location <div id="accuracy-indicator"><span></span></div><span id="accuracy"></span></li>
+          </ul>
+      </div>
+      <div id="location">
+            <div class="toolbar">
+                <h1>Location</h1>
+                <a class="back" href="#">done</a>
+                <a class="button slideup" href="#location" id="locationRefresh">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 30 30" enable-background="0 0 30 27" xml:space="preserve"><path fill="#FFFFFF" d="                  M24.249,15.499c-0.009,4.832-3.918,8.741-8.75,8.75c-2.515,0-4.768-1.064-6.365-2.763l2.068-1.442l-7.901-3.703l0.744,8.694l2.193-1.529c2.244,2.594,5.562,4.242,9.26,4.242c6.767,0,12.249-5.482,12.249-12.249H24.249zM15.499,6.75c2.516,0,4.769,1.065,6.367,2.764l-2.068,1.443l7.901,3.701l-0.746-8.693l-2.192,1.529c-2.245-2.594-5.562-4.245-9.262-4.245C8.734,3.25,3.25,8.734,3.249,15.499H6.75C6.758,10.668,10.668,6.758,15.499,6.75z"/></svg>
+                  <!-- <img src="images/01-refresh.png"> -->
+                </a>
+            </div>
+            <div class="info scroll" id="error"></div>
+            <ul>
+                <li id="map"><img src="images/loading.gif" id="loading" /><span></span></li>
+            </ul>
+        </div>
+      <div id="post_message">
+          <div class="toolbar">
+                <h1>New Guff</h1>
+                <a class="back" id="back" href="#">cancel</a>
+                <a class="button" href="#" id="submitGuff">send</a>
+          </div>
+          <div class="info scroll" id="error"></div>
+          <form id="send-guff" class="scroll" action="http://guff.herokuapp.com/send" method="post">
+          <!--<form id="send-guff" class="scroll" action="http://192.168.0.3:4567/send" method="post">-->
+              <ul class="edit rounded">
+                  <li><label for="post_text">New Guff</label></li>
+                  <li><textarea rows="4" cols="30" name="message" id="message"></textarea></li>
+                  <!-- <li><input type="submit" value="send" id="guffSubmit" class="whiteButton"/></li> -->
+                  <li><em>200m range, for 2hrs</em><span id="counter">141</span></li>
+                  <input type="hidden" name="accuracy" id="accuracy" value="" />
+                  <input type="hidden" name="latitude" id="latitude" value="" />
+                  <input type="hidden" name="longitude" id="longitude" value="" />
+          </form>
+      </div>
+  </div>
+  </body>
+</html>
