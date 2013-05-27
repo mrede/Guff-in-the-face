@@ -17,6 +17,7 @@
         Ben n Tom
     </author>
 
-    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="phonegap-version" value="2.7.0" />
+    <gap:plugin name="GenericPush" /> <!-- latest release -->
 
 </widget>
